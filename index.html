@@ -33,12 +33,14 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/contacts">Contacts</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                 </ul>
             </div>
         </nav>
         <div id="content">
             
         </div>
+        
 
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script>
@@ -53,6 +55,8 @@
                     targetPageName = 'home';
                 }
 
+                window.history.pushState('forward', null, '/' + targetPageName);
+                
                 var postObj = $.post('pages/'+targetPageName+'.html')
                 postObj.done(function(response)
                 {  
@@ -75,6 +79,15 @@
             postObj.done(function(response)
             {  
                 $('#content').html(response);
+            });
+
+            $(window).on('popstate', function()
+            {
+                var postObj = $.post('pages/'+getPageName()+'.html')
+            postObj.done(function(response)
+            {  
+                $('#content').html(response);
+            });   
             });
             
         </script>
