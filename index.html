@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>My page</title>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <style>
+            ul li {
+                list-style-type: none;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                margin: 15px;
+                text-transform: uppercase;
+            }
+
+            li a:hover {
+                text-decoration: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+            $("a").click(function(e)
+            {
+                e.preventDefault();
+
+                var targetPageName = $(this).attr('href').substr(1);
+
+                if(targetPageName == '')
+                {
+                    targetPageName = 'home';
+                }
+
+                var postObj = $.post('pages/'+targetPageName+'.html')
+                postObj.done(function(response)
+                {  
+                    $('#content').html(response);
+                });
+                
+            });
+
+            function getPageName() {
+                var PageName = window.location.pathname.substr(1);
+                
+                if (PageName == "") {
+                    PageName = "home"
+                };
+
+                return PageName;
+            }            
+
+            var postObj = $.post('pages/'+getPageName()+'.html')
+            postObj.done(function(response)
+            {  
+                $('#content').html(response);
+            });
+            
+        </script>
+    </body>
+</html>
