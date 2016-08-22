@@ -10,7 +10,7 @@ if(file_exists($requestedFile))
 
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-	require('index.html');
+	require('index.php');
 	exit();
 }
 

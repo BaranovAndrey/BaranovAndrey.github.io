@@ -1,1 +1,70 @@
-<h1>Gallery page</h1>
+<style type="text/css">
+	.rslides {
+		position: relative;
+		list-style: none;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		margin-top: -20px;
+		margin-bottom: 50px;
+  	}
+
+	.rslides li {
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0;
+		top: 0;
+	  }
+
+	.rslides li:first-child {
+		position: relative;
+		display: block;
+		float: left;
+	}
+
+	.rslides img {
+		display: block;
+		height: auto;
+		float: left;
+		width: 100%;
+		border: 0;
+	}
+	.rslides_nav {
+		margin: 0 auto;
+	}
+
+
+</style>
+<ul class="rslides">
+  <li><img src="../slider/images/1.jpg" alt=""></li>
+  <li><img src="../slider/images/2.jpg" alt=""></li>
+  <li><img src="../slider/images/3.jpg" alt=""></li>
+</ul>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="../slider/responsiveslides.min.js"></script>
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
+$(".rslides").responsiveSlides({
+  auto: true,             // Boolean: Animate automatically, true or false
+  speed: 500,            // Integer: Speed of the transition, in milliseconds
+  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+  pager: false,           // Boolean: Show pager, true or false
+  nav: false,             // Boolean: Show navigation, true or false
+  random: false,          // Boolean: Randomize the order of the slides, true or false
+  pause: false,           // Boolean: Pause on hover, true or false
+  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+  prevText: "Previous",   // String: Text for the "previous" button
+  nextText: "Next",       // String: Text for the "next" button
+  maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+  manualControls: "",     // Selector: Declare custom pager navigation
+  namespace: "rslides",   // String: Change the default namespace used
+  before: function(){},   // Function: Before callback
+  after: function(){}     // Function: After callback
+});
+</script>
