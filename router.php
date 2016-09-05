@@ -4,7 +4,18 @@ $requestedFile = ltrim($_SERVER['REQUEST_URI'], '/');
 
 if(file_exists($requestedFile))
 {
-	require($requestedFile);
+	if(pathinfo($requestedFile)['extension'] == 'php')
+	{
+		require($requestedFile);
+		exit();
+	}
+	
+	if(in_array(pathinfo($requestedFile)['extension'], ['jpg', 'png']))
+	{
+		header('Content-Type: image/jpeg');
+	}
+
+	echo file_get_contents($requestedFile);
 	exit();
 }
 

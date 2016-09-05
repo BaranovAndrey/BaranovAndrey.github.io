@@ -10,7 +10,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">My site</a>
+			<a class="navbar-brand" href="/">Масаж</a>
 		</div>
 
 
@@ -18,17 +18,17 @@
 
 			<ul class="nav navbar-nav">
 			    <li>
-			    	<a href="/">Home<span class="sr-only">(current)</span></a>
+			    	<a class="load-page" href="/">Головна</a>
 			    </li>
 			    <li>
-			    	<a href="/services">Services</a>
+			    	<a class="load-page" href="/services">Види масажу</a>
 			    </li>
 			    <li>
-			    	<a href="/contacts">Contacts</a>
+			    	<a class="load-page" href="/gallery">Галерея</a>
 			    </li>
 			    <li>
-			    	<a href="/gallery">Gallery</a>
-			    </li>
+			    	<a class="load-page" href="/contacts">Контакти</a>
+			    </li>	
 			</ul>
 
 		</div>

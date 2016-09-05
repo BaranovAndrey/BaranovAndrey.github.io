@@ -1,3 +1,5 @@
+
+
 <style>
   
 * {
@@ -126,26 +128,34 @@ fieldset {
 :-ms-input-placeholder {
   color: #888;
 }
+.content {
+    min-height: 500px;
+  }
+.map_Div {
+  
+}
 </style>
+
+
 <div class="container">  
-  <form id="contact" action="" method="post">
-    <h3>Contact Form</h3>
-    <h4>Contact us</h4>
+  <form action="action.php" id="contact" method="post">
+    <h3>Напишіть мені</h3>
     <fieldset>
-      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+      <input name="name" placeholder="Ваше ім'я" type="text" tabindex="1" required autofocus value="">
     </fieldset>
     <fieldset>
-      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+      <input name="email" placeholder="Ваша електронна адреса" type="email" tabindex="2" required value="">
     </fieldset>
     <fieldset>
-      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3">
+      <input name="phone" placeholder="Ваш номер телефону" type="tel" tabindex="3" required value="">
     </fieldset>
     <fieldset>
-      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+      <textarea name="message" placeholder="Залиште своє повідомлення тут...." tabindex="4" required value=""></textarea>
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      <button name="submit" type="submit" id="contact-submit">Відправити</button>
     </fieldset>
     
   </form>
 </div>
+
